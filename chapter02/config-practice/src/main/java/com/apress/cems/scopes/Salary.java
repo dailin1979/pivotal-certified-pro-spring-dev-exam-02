@@ -45,8 +45,8 @@ import java.util.Random;
 // TODO. 15 Create a specialized version of the @Scope annotation you used on this bean to solve requirement 14.
 @Description("Salary for an employee might change, so this is a suitable example for a prototype scoped bean")
 @Component
-@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE, proxyMode = ScopedProxyMode.INTERFACES)
-public class Salary implements Incoming{
+@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE, proxyMode = ScopedProxyMode.TARGET_CLASS)
+public class Salary{
     private Logger logger = LoggerFactory.getLogger(Salary.class);
 
     private Integer amount;
@@ -56,8 +56,6 @@ public class Salary implements Incoming{
         Random rand = new Random();
         this.amount = rand.nextInt(10_000) +  50_000;
     }
-
-    @Override
     public Integer getAmount() {
         return amount;
     }

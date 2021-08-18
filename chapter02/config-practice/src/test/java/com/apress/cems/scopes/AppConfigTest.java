@@ -49,11 +49,22 @@ public class AppConfigTest {
         var employee = ctx.getBean(Employee.class);
         assertNotNull(employee);
 
-        var incoming = employee.getIncoming();
-        logger.info("Salary bean actual type: {}", incoming.getClass().toString());
+        var salary = employee.getSalary();
+        logger.info("Salary bean actual type: {}", salary.getClass().toString());
 
-        logger.info("Salary: {}", incoming.getAmount());
-        logger.info("Salary: {}", incoming.getAmount());
-        logger.info("Salary: {}", incoming.getAmount());
+        logger.info("Salary: {}", salary.getAmount());
+        logger.info("Salary: {}", salary.getAmount());
+        logger.info("Salary: {}", salary.getAmount());
+    }
+
+    @Test
+    void testNewBeanLifecycle() {
+        var ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+        ctx.registerShutdownHook();
+
+        var myIncoming = ctx.getBean(MyIncoming.class);
+
+        assertNotNull(myIncoming);
+
     }
 }

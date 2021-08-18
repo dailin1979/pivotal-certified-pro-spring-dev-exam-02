@@ -58,7 +58,7 @@ public class NewSalary implements Incoming{
     }
 
     @Override
-    public Integer getAmount() {
+    public Integer getIncoming() {
         return amount;
     }
 }

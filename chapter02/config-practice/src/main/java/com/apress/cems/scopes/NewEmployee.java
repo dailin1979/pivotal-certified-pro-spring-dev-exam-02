@@ -27,22 +27,27 @@ SOFTWARE.
 */
 package com.apress.cems.scopes;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Iuliana Cosmina
  * @since 1.0
  */
-@Configuration
-@ComponentScan(basePackages = {"com.apress.cems.scopes"} )
-public class AppConfig {
+@Component
+public class NewEmployee {
+    private Incoming incoming;
 
-    @Bean
-    @IncomingScope(proxyMode = ScopedProxyMode.INTERFACES)
-    MyIncoming mySalary(){
-        return new MySalary();
+    public NewEmployee(Incoming incoming) {
+        this.incoming = incoming;
+    }
+
+    @Autowired
+    public void setIncoming(Incoming incoming) {
+        this.incoming = incoming;
+    }
+
+    public Incoming getIncoming() {
+        return incoming;
     }
 }
