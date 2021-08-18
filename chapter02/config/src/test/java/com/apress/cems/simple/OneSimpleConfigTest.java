@@ -28,11 +28,15 @@ SOFTWARE.
 package com.apress.cems.simple;
 
 import com.apress.cems.beans.ci.SimpleBean;
+import com.apress.cems.lc.DataSourceCfg;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import javax.sql.DataSource;
+import java.sql.SQLException;
 
 /**
  * @author Iuliana Cosmina

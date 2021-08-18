@@ -39,7 +39,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @since 1.0
  */
 // Comment the @Disabled annotation to run your test
-@Disabled
+//@Disabled
 class HumanAppCfgTest {
 
     @Test
@@ -50,7 +50,7 @@ class HumanAppCfgTest {
 
         assertNotNull(humanBean);
         assertNotNull(humanBean.getItem());
-        assertNotNull(humanBean.getItem().getTitle());
+        assertEquals("myBook", humanBean.getItem().getTitle());
 
         ctx.close();
     }

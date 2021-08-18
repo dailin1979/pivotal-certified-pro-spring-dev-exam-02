@@ -30,6 +30,7 @@ package com.apress.cems.beans.ci;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -66,13 +67,12 @@ class SimpleAppCfgTest {
     @Test
     void testBeanNames() {
         var ctx = new AnnotationConfigApplicationContext(SimpleAppCfg.class);
-
         for (String beanName : ctx.getBeanDefinitionNames()) {
             logger.info("Bean " + beanName + " of type "
                     + ctx.getBean(beanName).getClass().getSimpleName());
         }
 
-        var simpleBean = ctx.getBean("simpleBeanImpl", SimpleBean.class);
+        var simpleBean = ctx.getBean( SimpleBean.class);
         assertNotNull(simpleBean);
         assertTrue(simpleBean instanceof SimpleBeanImpl);
 

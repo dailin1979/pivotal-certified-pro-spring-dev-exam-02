@@ -27,16 +27,25 @@ SOFTWARE.
 */
 package com.apress.cems.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 /**
  * @author Iuliana Cosmina
  * @since 1.0
  */
 // TODO 8. Add  a bean definition
+@Component
 public class Person implements Human {
 
     private Item item;
 
     // TODO 9. Add a constructor and inject a bean of type Item
+    @Autowired
+    public Person(@Qualifier("book") Item item) {
+        this.item = item;
+    }
 
     @Override
     public Item getItem() {
