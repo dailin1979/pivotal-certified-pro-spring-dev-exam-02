@@ -36,18 +36,18 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class Employee {
-    private Salary salary;
+    private Incoming incoming;
 
-    public Employee(Salary salary) {
-        this.salary = salary;
+    public Employee(Incoming incoming) {
+        this.incoming = incoming;
     }
 
     @Autowired
-    public void setSalary(Salary salary) {
-        this.salary = salary;
+    public void setSalary(Incoming incoming) {
+        this.incoming = incoming;
     }
 
-    public Salary getSalary() {
-        return salary;
+    public Incoming getIncoming() {
+        return incoming;
     }
 }

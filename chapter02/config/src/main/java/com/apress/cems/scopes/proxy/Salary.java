@@ -38,7 +38,8 @@ import java.util.Random;
  * @author Iuliana Cosmina
  * @since 1.0
  */
-@Description("Salary for an employee might change, so this is a suitable example for a prototype scoped bean")
+@Description("Salary for an employee might change, " +
+        "so this is a suitable example for a prototype scoped bean")
 @Component
 @Scope(value = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class Salary {

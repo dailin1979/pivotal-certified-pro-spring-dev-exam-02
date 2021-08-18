@@ -46,12 +46,12 @@ import java.util.Random;
 @Description("Salary for an employee might change, so this is a suitable example for a prototype scoped bean")
 @Component
 @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE, proxyMode = ScopedProxyMode.INTERFACES)
-public class Salary implements Incoming{
-    private Logger logger = LoggerFactory.getLogger(Salary.class);
+public class NewSalary implements Incoming{
+    private Logger logger = LoggerFactory.getLogger(NewSalary.class);
 
     private Integer amount;
 
-    public Salary() {
+    public NewSalary() {
         logger.info(" -> Creating new Salary bean");
         Random rand = new Random();
         this.amount = rand.nextInt(10_000) +  50_000;

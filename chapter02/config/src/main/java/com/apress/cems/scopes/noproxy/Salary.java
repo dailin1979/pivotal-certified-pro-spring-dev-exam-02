@@ -29,6 +29,7 @@ package com.apress.cems.scopes.noproxy;
 
 import org.springframework.context.annotation.Description;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 import java.util.Random;
@@ -39,7 +40,9 @@ import java.util.Random;
  * @author Iuliana Cosmina
  * @since 1.0
  */
-@Description("Salary for an employee might change, so this is a suitable example for a prototype scoped bean. This example shows how it shouldn't be used though.")
+@Description("Salary for an employee might change, " +
+        "so this is a suitable example for a prototype scoped bean. " +
+        "This example shows how it shouldn't be used though.")
 @Component
 @Scope(value = "prototype")
 public class Salary {

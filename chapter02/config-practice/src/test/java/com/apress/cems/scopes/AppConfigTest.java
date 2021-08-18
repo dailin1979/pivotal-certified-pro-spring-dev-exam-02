@@ -49,12 +49,11 @@ public class AppConfigTest {
         var employee = ctx.getBean(Employee.class);
         assertNotNull(employee);
 
-        var salary = employee.getSalary();
-        logger.info("Salary bean actual type: {}", salary.getClass().toString());
+        var incoming = employee.getIncoming();
+        logger.info("Salary bean actual type: {}", incoming.getClass().toString());
 
-        logger.info("Salary: {}", salary.getAmount());
-        logger.info("Salary: {}", salary.getAmount());
-        logger.info("Salary: {}", salary.getAmount());
-
+        logger.info("Salary: {}", incoming.getAmount());
+        logger.info("Salary: {}", incoming.getAmount());
+        logger.info("Salary: {}", incoming.getAmount());
     }
 }
