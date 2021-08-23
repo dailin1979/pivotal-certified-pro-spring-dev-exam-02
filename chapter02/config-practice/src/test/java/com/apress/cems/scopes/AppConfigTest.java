@@ -66,5 +66,11 @@ public class AppConfigTest {
 
         assertNotNull(myIncoming);
 
+        logger.info("myIncoming bean actual type: {}", myIncoming.getClass().toString());
+
+        logger.info("myIncoming: {}", myIncoming.getMyIncoming());
+        logger.info("myIncoming: {}", myIncoming.getMyIncoming());
+        logger.info("myIncoming: {}", myIncoming.getMyIncoming());
+
     }
 }
