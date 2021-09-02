@@ -44,6 +44,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 /**
  * @author Iuliana Cosmina
  * @since 1.0
+ *
+ * Annotation SpringJUnitConfig = ExtendWith(SpringExtension.class)
+ * + ContextConfiguration(classes = {TestDbConfig.class, ReposConfig.class})
  */
 /*@ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {TestDbConfig.class, ReposConfig.class})*/
@@ -52,8 +55,8 @@ class RepositoryTest {
 
     static final Long PERSON_ID = 1L;
 
-//    因为intellij 预判错误， 这里idea确认@Autowired(required=true)需要 personRepo Bean
-//    可以通过加@Resource 解决这里 eagerly load
+    //因为intellij 预判错误, 这里idea确认@Autowired(required=true) ->personRepo Bean
+    //可以通过加@Resource 解决这里 eagerly load
     @Autowired
     PersonRepo personRepo;
 
