@@ -40,15 +40,15 @@ import javax.sql.DataSource;
  * @since 1.0
  */
 @Configuration
-    @ComponentScan(basePackages = {"com.apress.cems.repos"})
-    public class ReposConfig {
+@ComponentScan(basePackages = {"com.apress.cems.repos"})
+public class ReposConfig {
 
-        @Autowired
-        DataSource dataSource;
+    @Autowired
+    DataSource dataSource;
 
-        @Bean
-        public JdbcTemplate userJdbcTemplate() {
-            return new JdbcTemplate(dataSource);
-        }
+    @Bean
+    public JdbcTemplate userJdbcTemplate() {
+        return new JdbcTemplate(dataSource);
+    }
 
 }

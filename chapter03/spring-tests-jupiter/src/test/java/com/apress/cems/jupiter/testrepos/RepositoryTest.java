@@ -36,6 +36,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
+import javax.annotation.Resource;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -50,6 +52,8 @@ class RepositoryTest {
 
     static final Long PERSON_ID = 1L;
 
+//    因为intellij 预判错误， 这里idea确认@Autowired(required=true)需要 personRepo Bean
+//    可以通过加@Resource 解决这里 eagerly load
     @Autowired
     PersonRepo personRepo;
 

@@ -29,6 +29,7 @@ package com.apress.cems.lc;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
@@ -37,9 +38,15 @@ import javax.annotation.PreDestroy;
 /**
  * @author Iuliana Cosmina
  * @since 1.0
+ * page 118
+ * there are 3 ways of initializing a bean avilable in spring
+ * 1. implementing InitializingBean interface
+ * 2. @PostConstruct on the method
+ * 3. using @Bean(initMethod="") wenn code from third party library or
+ *    dependency can not be edited
  */
 @Component
-public class ComplexBean {
+public class ComplexBean implements InitializingBean {
     private Logger logger = LoggerFactory.getLogger(ComplexBean.class);
 
     private SimpleBean simpleBean;
@@ -70,8 +77,19 @@ public class ComplexBean {
         }
     }
 
+
+
     @PreDestroy
     private void destroy(){
         logger.info("Stage 4: Calling the destroy method.");
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        logger.info("stage 4, calling the afterPropertiesSet.");
+        long ct = System.currentTimeMillis();
+        if(ct%2==0){
+            anotherSimpleBean = new AnotherSimpleBean();
+        }
     }
 }

@@ -36,7 +36,7 @@ import org.springframework.stereotype.Component;
  * @author Iuliana Cosmina
  * @since 1.0
  */
-@Component
+//@Component -> bean not lazy load (default modus for autowired)
 public class AnotherSimpleBeanImpl implements SimpleBean {
     private Logger logger = LoggerFactory.getLogger(AnotherSimpleBeanImpl.class);
 

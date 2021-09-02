@@ -48,6 +48,7 @@ public class AnotherComposedBeanImpl implements AnotherComposedBean {
         this.complex = complex;
     }
 
+//    @Autowired - default value is true for required -> not lazy load
     @Autowired(required = false)
     public void setSimpleBean(SimpleBean simpleBean) {
         this.simpleBean = simpleBean;

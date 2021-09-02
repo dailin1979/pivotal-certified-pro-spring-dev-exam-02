@@ -45,7 +45,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @since 1.0
  */
 @ExtendWith(SpringExtension.class)
-@ActiveProfiles("test")
+@ActiveProfiles("prod")
 @ContextConfiguration(classes = {ProdDataSourceConfig.class, TestProfileDataSourceConfig.class, RepositoryConfig.class})
 public class ProfilesTest {
 

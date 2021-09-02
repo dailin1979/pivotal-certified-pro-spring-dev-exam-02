@@ -43,8 +43,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  */
 @ExtendWith(SpringExtension.class)
 // The following config only works if the @Profile("prod") is removed from ProdDataSourceConfig class
-//@ContextConfiguration(classes = {ProdDataSourceConfig.class, RepositoryConfig.class})
-@ContextConfiguration(classes = {EnvTestDataSourceConfig.class, RepositoryConfig.class})
+@ContextConfiguration(classes = {ProdDataSourceConfig.class, RepositoryConfig.class})
+//@ContextConfiguration(classes = {EnvTestDataSourceConfig.class, RepositoryConfig.class})
 public class MultipleResourcesTest {
 
     @Autowired
